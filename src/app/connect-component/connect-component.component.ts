@@ -120,4 +120,26 @@ export class ConnectComponentComponent implements OnInit {
   setClickedRow(i) {
     this.toUser=this.activeList[i];
   }
+  onAbout() {
+    confirm("\n\
+    Front :angular 2  \n\
+    Back-end :Springboot + Websocket \n\
+    \n\
+    Below is the functions of this project \n\
+    Server: \n\
+    -  Server accepts 1 to 10 simultaneous client connections \n\
+    -  A message received from any client can be echoed to all clients by default \n\
+    -  The server logs all client connect and disconnect events \n\
+    -  The listening IP and port address can be configurable \n\
+    \n\
+    Client Requirements:\n\
+    -  The server IP and port address can be configurable \n\
+    -  At start-up, the client can ask the user to provide a unique username\n\
+    -  The client can allow the user to enter an alpha-numeric text message\n\
+    -  Entered text messages can be transmitted to the server\n\
+    -  The client can display received text messages\n\
+    -  The client can be able to filter messages by user\n\
+    -  (Optional) The client can be able to send a message to a selected user\n\
+    -  Logout by clicking disconnect.");
+  }
 }

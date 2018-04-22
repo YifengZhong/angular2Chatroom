@@ -16,6 +16,7 @@
             required> -->
         <button type="submit" class="btn btn-primary" [disabled]="!f2.valid">connect</button>
         <label id="errorLogin" [class]=showError()>{{errMessage}}</label>
+        <button type="button" class="btn btn-primary" (click)="onAbout()">about</button>
       </div>
     </form>
     <button [class]=getClaz() type="button" class="btn btn-default" (click)="onDisconnect()">disconnect</button>
