@@ -28,7 +28,7 @@ export class ConnectComponentComponent implements OnInit {
 
   ngOnInit() {
     this.isActive = false;
-    this.connect_address = "localhost";
+    this.connect_address = "chatroom4zhong-srv.herokuapp.com";
     this.toUser = "";
     this.connect_port = "8080";
   }

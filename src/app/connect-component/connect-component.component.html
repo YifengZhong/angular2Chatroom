@@ -2,7 +2,7 @@
   <div class="">
     <form [class]=getsubmitClass() (ngSubmit)="onConnect()" #f2="ngForm">
       <div ngModelGroup="userData">
-        <input type="text"
+        <!-- <input type="text"
             id="connect_address"
             [(ngModel)]="connect_address"
             name="connect_address"
@@ -13,7 +13,7 @@
             [(ngModel)]="connect_port"
             name="connect_port"
             placeholder="port like 8080"
-            required>
+            required> -->
         <button type="submit" class="btn btn-primary" [disabled]="!f2.valid">connect</button>
         <label id="errorLogin" [class]=showError()>{{errMessage}}</label>
       </div>
