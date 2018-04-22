@@ -18,7 +18,7 @@ export class ConnectService {
     }
     public connect(address:string, port:string):Observable<any> {
         let self = this;
-        let webSocket = new WebSocket("ws://"+ address + "/gs-guide-websocket/websocket");
+        let webSocket = new WebSocket("wss://"+ address + "/gs-guide-websocket/websocket");
         this._stompClient = Stomp.over(webSocket);
         this._stompClient.connect({}, function (frame) {
 
