@@ -19,6 +19,8 @@ export class ConnectService {
     public connect(address:string, port:string):Observable<any> {
         let self = this;
         let webSocket = new WebSocket("wss://"+ address + "/gs-guide-websocket/websocket");
+//for debug
+//        let webSocket = new WebSocket("ws://192.168.1.157:8070/gs-guide-websocket/websocket");
         this._stompClient = Stomp.over(webSocket);
         this._stompClient.connect({}, function (frame) {
 
@@ -52,6 +54,9 @@ export class ConnectService {
 
     public send(username:string, _payload: string,toUser:string) {
         this._stompClient.send("/app/messaging", {}, JSON.stringify({'name': username,'content':_payload,'toUser':toUser}));
+    }
+    public sendHeartBit() {
+        this._stompClient.send("/app/heartBit", {}, {});
     }
 
     public getObservable() : Observable<any> {

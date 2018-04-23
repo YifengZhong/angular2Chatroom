@@ -1,5 +1,6 @@
 import { Component, OnInit,HostListener } from '@angular/core';
 import { ConnectService } from "../service/connectionSrv";
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'connect-component',
@@ -55,10 +56,16 @@ export class ConnectComponentComponent implements OnInit {
     this.message_content = "";
     
   }
+  sendHeartbit() {
+    this.connect.sendHeartBit();
+  }
   onConnect() {
     this.hideorShow = true;
     this.showErrorMsg = false;
     this.connect.connect(this.connect_address, this.connect_port).subscribe(data => {
+      Observable.interval(1000 * 30).subscribe(x => {
+        this.sendHeartbit();
+      });
       //reaching the maxium number
       if(data.full === true) {
         this.hideorShow = false;
